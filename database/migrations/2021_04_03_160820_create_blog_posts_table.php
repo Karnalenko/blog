@@ -29,7 +29,7 @@ class CreateBlogPostsTable extends Migration
         Schema::dropIfExists('blog_posts');
     }
 }
-
+{
 $table->id();
 $table->bigInteger('category_id')->unsigned(); //category
 $table->bigInteger('user_id')->unsigned();  //author
@@ -44,4 +44,4 @@ $table->timestamps();
 $table->softDeletes(); //not delete items
 $table->foreign('user_id')->references('id')->on('users');
 $table->foreign('category_id')->references('id')->on('blog_categories');
-$table->index('is_published');
+$table->index('is_published');}
